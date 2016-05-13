@@ -26,7 +26,7 @@ all particles will gather in a single point representing the minimal value.
 
 ![demo](https://raw.githubusercontent.com/Iulian-Stan/ParticleSwarmOptimization/502a390653387d3233d84223d3d5d66206923721/demo.PNG)
 
-There is a graphical representation of the problem on the right side and control panel on left.
+There is a graphical representation of the problem on the left side and control panel on the right.
 
 ### Graphic
 The functions origin is in the middle of the image, the color represents function value taking
