@@ -24,5 +24,31 @@ all particles will gather in a single point representing the minimal value.
 
 ## Interface 
 
-comming soon
+![demo](https://raw.githubusercontent.com/Iulian-Stan/ParticleSwarmOptimization/502a390653387d3233d84223d3d5d66206923721/demo.PNG)
 
+There is a graphical representation of the problem on the right side and control panel on left.
+
+### Graphic
+The functions origin is in the middle of the image, the color represents function value taking
+each points coordinates as input values, the dots represent the **_particles_**.
+
+### Control
+Parameters:
+* **Population** size - particles number
+* **Delay** - small freeze time used in simulation
+* **Optimization function** - mentioned above
+* **Algorithm** 
+ * Base - particle's position shifting is determined equaly by all other particles
+ * Initial weight - in addition to base case it adds a coefficient to the previous shifting 
+(other way said it sets previous step position importance) 
+ * Constriction factor - the entire formula from base case is scaled by a factor
+* **Topology**
+ * Full - each particle is affected by the entire population
+ * Ring - each particle is affected only by two neigbours
+ * 4-neighbours - each particle is affected by 4 neighbours
+* **Coeficients**
+ * φ1 - individual influence (how much te movement is affected by individual position)
+ * φ2 - social infuence (how much te movement is affected by other's particles position)
+ * w/ψ - initial weight or constriction factor (depending on selected algorithm)
+ 
+Best result is displayed on the bottom.
