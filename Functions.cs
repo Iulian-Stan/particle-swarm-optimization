@@ -1,16 +1,15 @@
 ﻿using System;
-using System.Drawing;
 
 namespace PSO
 {
     public abstract class Function
     {
-        public abstract double Apply(double x, double y);       
+        public abstract double Apply(double x, double y);
     }
 
     //for i = 1:n
     //      val = val + x(i).^2;
-    //end    
+    //end
     public class Sphere : Function
     {
         public override double Apply(double x, double y)

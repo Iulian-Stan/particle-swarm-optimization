@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace PSO
 {
@@ -13,7 +8,9 @@ namespace PSO
     {
         public static Function F { get; protected set; }
         public List<Particle> Particles { get; protected set; }
-        private double _fi1, _fi2, _w, _psi, _x, _y, _best = double.MaxValue;
+        private readonly double _fi1, _fi2, _w, _psi;
+        private double _x, _y, _best = double.MaxValue;
+
         public int Count { get { return (Particles == null ? 0 : Particles.Count); } }
         public Particle this[int index]
         {
@@ -52,7 +49,7 @@ namespace PSO
 
             CreateMap(width, height);
         }
-        
+
         public void SimulateStep(int delay)
         {
             foreach (Particle particle in Particles)
@@ -97,8 +94,7 @@ namespace PSO
 
         public void Clear()
         {
-            if (Particles != null)
-                Particles.Clear();
+            Particles?.Clear();
         }
 
         public void AddRange(List<Particle> particles)
@@ -108,7 +104,7 @@ namespace PSO
 
         static public Bitmap Map { get; protected set; }
 
-        private void CreateMap(int width, int height)
+        private static void CreateMap(int width, int height)
         {
             double[,] img = new double[width, height];
             double maxObtained, minObtained = maxObtained = F.Apply(0, 0);

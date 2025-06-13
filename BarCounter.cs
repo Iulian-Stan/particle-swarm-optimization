@@ -8,8 +8,8 @@ namespace PSO
     {
         public new string Name
         {
-            set 
-            { 
+            set
+            {
                 label.Text = value;
             }
         }

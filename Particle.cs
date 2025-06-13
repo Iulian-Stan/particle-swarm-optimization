@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Linq;
-using System.Runtime.Serialization;
 
 namespace PSO
 {
     public class Particle
     {
-        private static Random _rnd = new Random();
+        private static readonly Random _rnd = new();
         /// <summary>
         /// Current cost
         /// </summary>
@@ -64,7 +62,7 @@ namespace PSO
         {
             XV = PSI * (W * XV + Fi1 * _rnd.NextDouble() * (BestX - X) + Fi2 * _rnd.NextDouble() * (GX - X));
             YV = PSI * (W * YV + Fi1 * _rnd.NextDouble() * (BestY - Y) + Fi2 * _rnd.NextDouble() * (GY - Y));
-            
+
             X += XV;
             Y += YV;
         }

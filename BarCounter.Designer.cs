@@ -2,12 +2,12 @@
 {
     partial class BarCounter
     {
-        /// <summary> 
+        /// <summary>
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
+        /// <summary>
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -22,8 +22,8 @@
 
         #region Component Designer generated code
 
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
+        /// <summary>
+        /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
@@ -34,11 +34,11 @@
             this.textBox = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
-            // 
+            //
             // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            //
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -54,18 +54,18 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(90, 60);
             this.tableLayoutPanel1.TabIndex = 0;
-            // 
+            //
             // label
-            // 
+            //
             this.label.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label.AutoSize = true;
             this.label.Location = new System.Drawing.Point(45, 2);
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(0, 13);
             this.label.TabIndex = 0;
-            // 
+            //
             // hScrollBar
-            // 
+            //
             this.hScrollBar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.hScrollBar.LargeChange = 1;
             this.hScrollBar.Location = new System.Drawing.Point(5, 42);
@@ -73,9 +73,9 @@
             this.hScrollBar.Size = new System.Drawing.Size(80, 17);
             this.hScrollBar.TabIndex = 2;
             this.hScrollBar.ValueChanged += new System.EventHandler(this.HScrollBarValueChanged);
-            // 
+            //
             // textBox
-            // 
+            //
             this.textBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox.Location = new System.Drawing.Point(3, 21);
             this.textBox.Name = "textBox";
@@ -83,9 +83,9 @@
             this.textBox.TabIndex = 1;
             this.textBox.TextChanged += new System.EventHandler(this.TextBoxTextChanged);
             this.textBox.Leave += new System.EventHandler(this.TextBoxLeave);
-            // 
+            //
             // BarCounter
-            // 
+            //
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel1);

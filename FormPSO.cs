@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.IO;
@@ -140,10 +139,8 @@ namespace PSO
             DialogResult result = saveFileDialog.ShowDialog(); // Show the dialog.
             if (result == DialogResult.OK) // Test result.
             {
-                using (FileStream stream = File.OpenWrite(saveFileDialog.FileName))
-                {
-                    _serializer.Serialize(stream, _swarm.Particles);
-                }
+                using FileStream stream = File.OpenWrite(saveFileDialog.FileName);
+                _serializer.Serialize(stream, _swarm.Particles);
             }
         }
 
@@ -156,15 +153,13 @@ namespace PSO
             DialogResult result = saveFileDialog.ShowDialog(); // Show the dialog.
             if (result == DialogResult.OK) // Test result.
             {
-                using (var bitmap = new Bitmap(panelMap.Width, panelMap.Height))
-                {
-                    panelMap.DrawToBitmap(bitmap, panelMap.ClientRectangle);
-                    bitmap.Save(saveFileDialog.FileName, System.Drawing.Imaging.ImageFormat.Jpeg);
-                }
+                using var bitmap = new Bitmap(panelMap.Width, panelMap.Height);
+                panelMap.DrawToBitmap(bitmap, panelMap.ClientRectangle);
+                bitmap.Save(saveFileDialog.FileName, System.Drawing.Imaging.ImageFormat.Jpeg);
             }
         }
 
-        private void radioButtonFunction_CheckedChanged(object sender, EventArgs e)
+        private void RadioButtonFunction_CheckedChanged(object sender, EventArgs e)
         {
             if (radioButtonSphere.Checked)
             {
@@ -187,7 +182,7 @@ namespace PSO
                 return;
             }
         }
-        private void radioButtonAlgorithm_CheckedChanged(object sender, EventArgs e)
+        private void RadioButtonAlgorithm_CheckedChanged(object sender, EventArgs e)
         {
             if (radioButtonABase.Checked)
             {
@@ -206,7 +201,7 @@ namespace PSO
             }
         }
 
-        private void radioButtonTopo_CheckedChanged(object sender, EventArgs e)
+        private void RadioButtonTopo_CheckedChanged(object sender, EventArgs e)
         {
             if (radioButtonTFull.Checked)
             {
@@ -225,22 +220,22 @@ namespace PSO
             }
         }
 
-        private void buttonSim_Click(object sender, EventArgs e)
+        private void ButtonSim_Click(object sender, EventArgs e)
         {
             Buttons(false);
-            StringBuilder results = new StringBuilder();
+            StringBuilder results = new();
             double[,] Fi = { { 1, 3 }, { 2, 2 }, { 3, 1 } };
             double x = 0, y = 0, best;
-            List<Particle> particles = new List<Particle>(Population.Value);
+            List<Particle> particles = new(Population.Value);
             for (int particle = 0; particle < Population.Value; ++particle)
                 particles.Add(new Particle(panelMap.Width, panelMap.Height));
             using (FileStream stream = File.OpenWrite("sim"))
             {
                 _serializer.Serialize(stream, particles);
             }
-            foreach (EFunction function in Enum.GetValues(typeof(EFunction)))
-                foreach (EAlgorithm algorithm in Enum.GetValues(typeof(EAlgorithm)))
-                    foreach (ETopology topology in Enum.GetValues(typeof(ETopology)))
+            foreach (EFunction function in Enum.GetValues<EFunction>())
+                foreach (EAlgorithm algorithm in Enum.GetValues<EAlgorithm>())
+                    foreach (ETopology topology in Enum.GetValues<ETopology>())
                         for (int k = 0; k < Fi.GetLength(0); ++k)
                         {
                             best = double.MaxValue;
@@ -328,9 +323,9 @@ namespace PSO
 
         #region Data
 
-        private readonly XmlSerializer _serializer = new XmlSerializer(typeof(List<Particle>));
+        private readonly XmlSerializer _serializer = new(typeof(List<Particle>));
         private readonly Brush _brush = Brushes.Black;
-        private Swarm _swarm = new Swarm();
+        private Swarm _swarm = new();
         private EFunction functionType = EFunction.Sphere;
         private EAlgorithm algorithmType = EAlgorithm.Base;
         private ETopology topolagyType = ETopology.Full;
