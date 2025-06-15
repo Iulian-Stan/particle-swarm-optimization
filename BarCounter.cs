@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Globalization;
 using System.Windows.Forms;
 
@@ -6,6 +7,7 @@ namespace PSO
 {
     public partial class BarCounter : UserControl
     {
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public new string Name
         {
             set
@@ -14,6 +16,7 @@ namespace PSO
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public int Value
         {
             set { hScrollBar.Value = value; }

@@ -8,13 +8,13 @@ The purpose of this project is to show the use of **PSO** (Particle Swarm Optimi
 
 For more details (formula/representation) on optimisation functions (including the used ones) consult this [Wiki page](https://en.wikipedia.org/wiki/Test_functions_for_optimization).
 
-Another swarm intelligence based algorithm can be found here - [Ant Colony Optimization](https://github.com/Iulian-Stan/AntColonyOptimization).
+Another swarm intelligence based algorithm can be found here - [Ant Colony Optimization](https://github.com/iulian-stan/AntColonyOptimization).
 
 ## Solution
 By running the application it can be seen that the system is initialized with a randomly placed **_particles_** - which represents the initial solution in the function's visible domain. It tries to improve the solution gradually moving each particle closer to a possible solution. Eventually all particles will gather in a single point representing the minimal value.
 
 ## Interface
-![demo](https://raw.githubusercontent.com/Iulian-Stan/ParticleSwarmOptimization/502a390653387d3233d84223d3d5d66206923721/demo.PNG)
+![demo](https://raw.githubusercontent.com/iulian-stan/ParticleSwarmOptimization/502a390653387d3233d84223d3d5d66206923721/demo.PNG)
 
 There is a graphical representation of the problem on the left side and control panel on the right.
 
