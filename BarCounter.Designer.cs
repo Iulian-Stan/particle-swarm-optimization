@@ -104,6 +104,5 @@
         private System.Windows.Forms.HScrollBar hScrollBar;
         private System.Windows.Forms.TextBox textBox;
 
-
     }
 }

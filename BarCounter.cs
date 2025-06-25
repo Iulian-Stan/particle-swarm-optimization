@@ -23,7 +23,6 @@ namespace PSO
             get { return hScrollBar.Value; }
         }
 
-
         public BarCounter()
         {
             InitializeComponent();

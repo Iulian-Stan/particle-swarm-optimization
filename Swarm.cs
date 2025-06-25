@@ -128,7 +128,6 @@ namespace PSO
             double a = (maxExpected - minExpected) / (maxObtained - minObtained);
             double b = (minExpected * maxObtained - minObtained * maxExpected) / (maxObtained - minObtained);
 
-
             Map = new Bitmap(width, height);
             for (int j = 0; j < width; j++)
                 for (int i = 0; i < height; i++)
